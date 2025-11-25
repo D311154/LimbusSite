@@ -42,18 +42,18 @@
                         <td>{{ $mirrorDungeon->difficulty }}</td>
                         <td>{{ $mirrorDungeon->adversity }}</td>
                         <td>{{ $mirrorDungeon->keyword }}</td>
-                        <td>{{ $mirrorDungeon->YiSangId }}</td>
-                        <td>{{ $mirrorDungeon->FaustId }}</td>
-                        <td>{{ $mirrorDungeon->DonQuixoteId }}</td>
-                        <td>{{ $mirrorDungeon->RyoshuId }}</td>
-                        <td>{{ $mirrorDungeon->MeursaultId }}</td>
-                        <td>{{ $mirrorDungeon->HongLuId }}</td>
-                        <td>{{ $mirrorDungeon->HeathcliffId }}</td>
-                        <td>{{ $mirrorDungeon->IshmaelId }}</td>
-                        <td>{{ $mirrorDungeon->RodionId }}</td>
-                        <td>{{ $mirrorDungeon->SinclairId }}</td>
-                        <td>{{ $mirrorDungeon->OutisId }}</td>
-                        <td>{{ $mirrorDungeon->GregorId }}</td>
+                        <td>{{ $mirrorDungeon->yiSang->Identity }}</td>
+                        <td>{{ $mirrorDungeon->faust->Identity }}</td>
+                        <td>{{ $mirrorDungeon->donQuixote->Identity }}</td>
+                        <td>{{ $mirrorDungeon->ryoshu->Identity }}</td>
+                        <td>{{ $mirrorDungeon->meursault->Identity }}</td>
+                        <td>{{ $mirrorDungeon->hongLu->Identity }}</td>
+                        <td>{{ $mirrorDungeon->heathcliff->Identity }}</td>
+                        <td>{{ $mirrorDungeon->ishmael->Identity }}</td>
+                        <td>{{ $mirrorDungeon->rodion->Identity }}</td>
+                        <td>{{ $mirrorDungeon->sinclair->Identity }}</td>
+                        <td>{{ $mirrorDungeon->outis->Identity }}</td>
+                        <td>{{ $mirrorDungeon->gregor->Identity }}</td>
                     </tr>
                 @endforeach
             </tbody>
