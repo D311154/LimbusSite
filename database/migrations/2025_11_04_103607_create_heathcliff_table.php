@@ -24,7 +24,7 @@ return new class extends Migration
             ['Identity' => 'Seven Assoc. South Section 4'],
             ['Identity' => 'Multicrack Office Fixer'],
             ['Identity' => 'R Corp. 4th Pack Rabbit'],
-            ['Identity' => 'Lobotomy E.G.O::Sunshower'],
+            ['Identity' => 'Lobotomy E.G.O Sunshower'],
             ['Identity' => 'The Pequod Harpooneer'],
             ['Identity' => 'Öufi Assoc. South Section 3'],
             ['Identity' => 'Wild Hunt'],

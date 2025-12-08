@@ -23,14 +23,14 @@ return new class extends Migration
             ['Identity' => 'Molar Office Fixer'],
             ['Identity' => 'The Pequod First Mate'],
             ['Identity' => 'Dieci Assoc. South Section 4'],
-            ['Identity' => 'LCE E.G.O::Lantern'],
+            ['Identity' => 'LCE E.G.O Lantern'],
             ['Identity' => 'Blade Lineage Salsu'],
-            ['Identity' => 'Effloresced E.G.O::Spicebush'],
+            ['Identity' => 'Effloresced E.G.O Spicebush'],
             ['Identity' => 'W Corp. L3 Cleanup Agent'],
             ['Identity' => 'The Ring Pointillist Student'],
-            ['Identity' => 'Lobotomy E.G.O::Solemn Lament'],
+            ['Identity' => 'Lobotomy E.G.O Solemn Lament'],
             ['Identity' => 'Liu Assoc. South Section 3'],
-            ['Identity' => 'N Corp. E.G.O::Fell Bullet'],
+            ['Identity' => 'N Corp. E.G.O Fell Bullet'],
             ['Identity' => 'Heishou Pack - Wu Branch Adept'],
         ]);
     }

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     </head>
     <body>
 
@@ -13,7 +13,7 @@
         </header>
 
         <p>this project is still a work in progress.</p>
-        <p>the front end is being worked on.</p>
+        <p>the front end is being worked on... slowly but surely.</p>
         <p>see table below for mirror dungeon runs:</p>
 
         <table>
@@ -42,18 +42,18 @@
                         <td>{{ $mirrorDungeon->difficulty }}</td>
                         <td>{{ $mirrorDungeon->adversity }}</td>
                         <td>{{ $mirrorDungeon->keyword }}</td>
-                        <td>{{ $mirrorDungeon->yiSang->Identity }}</td>
-                        <td>{{ $mirrorDungeon->faust->Identity }}</td>
-                        <td>{{ $mirrorDungeon->donQuixote->Identity }}</td>
-                        <td>{{ $mirrorDungeon->ryoshu->Identity }}</td>
-                        <td>{{ $mirrorDungeon->meursault->Identity }}</td>
-                        <td>{{ $mirrorDungeon->hongLu->Identity }}</td>
-                        <td>{{ $mirrorDungeon->heathcliff->Identity }}</td>
-                        <td>{{ $mirrorDungeon->ishmael->Identity }}</td>
-                        <td>{{ $mirrorDungeon->rodion->Identity }}</td>
-                        <td>{{ $mirrorDungeon->sinclair->Identity }}</td>
-                        <td>{{ $mirrorDungeon->outis->Identity }}</td>
-                        <td>{{ $mirrorDungeon->gregor->Identity }}</td>
+                        <td><img src="{{ asset('images/YiSang/' . $mirrorDungeon->yiSang->Identity . '.png') }}" alt="{{ $mirrorDungeon->yiSang->Identity }}" title="{{ $mirrorDungeon->yiSang->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Faust/' . $mirrorDungeon->faust->Identity . '.png') }}" alt="{{ $mirrorDungeon->faust->Identity }}" title="{{ $mirrorDungeon->faust->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/DonQuixote/' . $mirrorDungeon->donQuixote->Identity . '.png') }}" alt="{{ $mirrorDungeon->donQuixote->Identity }}" title="{{ $mirrorDungeon->donQuixote->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Ryoshu/' . $mirrorDungeon->ryoshu->Identity . '.png') }}" alt="{{ $mirrorDungeon->ryoshu->Identity }}" title="{{ $mirrorDungeon->ryoshu->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Meursault/' . $mirrorDungeon->meursault->Identity . '.png') }}" alt="{{ $mirrorDungeon->meursault->Identity }}" title="{{ $mirrorDungeon->meursault->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/HongLu/' . $mirrorDungeon->hongLu->Identity . '.png') }}" alt="{{ $mirrorDungeon->hongLu->Identity }}" title="{{ $mirrorDungeon->hongLu->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Heathcliff/' . $mirrorDungeon->heathcliff->Identity . '.png') }}" alt="{{ $mirrorDungeon->heathcliff->Identity }}" title="{{ $mirrorDungeon->heathcliff->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Ishmael/' . $mirrorDungeon->ishmael->Identity . '.png') }}" alt="{{ $mirrorDungeon->ishmael->Identity }}" title="{{ $mirrorDungeon->ishmael->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Rodion/' . $mirrorDungeon->rodion->Identity . '.png') }}" alt="{{ $mirrorDungeon->rodion->Identity }}" title="{{ $mirrorDungeon->rodion->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Sinclair/' . $mirrorDungeon->sinclair->Identity . '.png') }}" alt="{{ $mirrorDungeon->sinclair->Identity }}" title="{{ $mirrorDungeon->sinclair->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Outis/' . $mirrorDungeon->outis->Identity . '.png') }}" alt="{{ $mirrorDungeon->outis->Identity }}" title="{{ $mirrorDungeon->outis->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/Gregor/' . $mirrorDungeon->gregor->Identity . '.png') }}" alt="{{ $mirrorDungeon->gregor->Identity }}" title="{{ $mirrorDungeon->gregor->Identity }}" class="identity-img"></td>
                     </tr>
                 @endforeach
             </tbody>

@@ -21,7 +21,7 @@ return new class extends Migration
             ['Identity' => 'LCB Sinner'],
             ['Identity' => 'Shi Assoc. South Section 5'],
             ['Identity' => 'LCCB Assistant Manager'],
-            ['Identity' => 'Lobotomy E.G.O::Sloshing'],
+            ['Identity' => 'Lobotomy E.G.O Sloshing'],
             ['Identity' => 'Edgar Family Butler'],
             ['Identity' => 'R Corp. 4th Pack Reindeer'],
             ['Identity' => 'Liu Assoc. South Section 4'],

@@ -25,7 +25,7 @@ return new class extends Migration
             ['Identity' => 'The Ring Pointillist Student'],
             ['Identity' => 'Seven Assoc. South Section 6 Director'],
             ['Identity' => 'Molar Office Fixer'],
-            ['Identity' => 'Lobotomy E.G.O::Magic Bullet'],
+            ['Identity' => 'Lobotomy E.G.O Magic Bullet'],
             ['Identity' => 'Wuthering Heights Chief Butler'],
             ['Identity' => 'W Corp. L3 Cleanup Captain'],
             ['Identity' => 'The Barber of La Manchaland'],

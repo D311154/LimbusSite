@@ -27,9 +27,9 @@ return new class extends Migration
             ['Identity' => 'R.B. Chef de Cuisine'],
             ['Identity' => 'W Corp L3 Cleanup Agent'],
             ['Identity' => 'Edgar Family Chief Butler'],
-            ['Identity' => 'Lobotomy E.G.O::Red Eyes & Penitence'],
+            ['Identity' => 'Lobotomy E.G.O Red Eyes & Penitence'],
             ['Identity' => 'Heishou Pack - Mao Branch'],
-            ['Identity' => 'N Corp. E.G.O::Contempt, Awe'],
+            ['Identity' => 'N Corp. E.G.O Contempt, Awe'],
             ['Identity' => 'Drifting Blade of Hongyuan'],
         ]);
     }

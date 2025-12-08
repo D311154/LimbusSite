@@ -21,7 +21,7 @@ return new class extends Migration
             ['Identity' => 'LCB Sinner'],
             ['Identity' => 'Zwei Assoc. South Section 6'],
             ['Identity' => 'Los Mariachis Jefe'],
-            ['Identity' => 'Lobotomy E.G.O::Red Sheet'],
+            ['Identity' => 'Lobotomy E.G.O Red Sheet'],
             ['Identity' => 'Molar Boatworks Fixer'],
             ['Identity' => 'Zwei Assoc. West Section 3'],
             ['Identity' => 'Blade Lineage Salsu'],

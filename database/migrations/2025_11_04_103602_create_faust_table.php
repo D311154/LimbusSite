@@ -25,10 +25,10 @@ return new class extends Migration
             ['Identity' => 'Wuthering Heights Butler'],
             ['Identity' => 'The One Who Grips'],
             ['Identity' => 'Seven Assoc. South Section 4'],
-            ['Identity' => 'Lobotomy E.G.O::Regret'],
+            ['Identity' => 'Lobotomy E.G.O Regret'],
             ['Identity' => 'Blade Lineage Salsu'],
             ['Identity' => 'Multicrack Office Rep'],
-            ['Identity' => 'LCE E.G.O::Ardor Blossom Star'],
+            ['Identity' => 'LCE E.G.O Ardor Blossom Star'],
             ['Identity' => 'Heishou Pack - Mao Branch Adept'],
             ['Identity' => 'Shi Assoc. East Section 3'],
         ]);

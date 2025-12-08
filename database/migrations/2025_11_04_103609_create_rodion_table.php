@@ -27,10 +27,10 @@ return new class extends Migration
             ['Identity' => 'Rosespanner Workshop Rep'],
             ['Identity' => 'Dieci Assoc. Section 4'],
             ['Identity' => 'Liu Assoc. South Section 4 Director'],
-            ['Identity' => 'Decyat assoc. North Section 3'],
+            ['Identity' => 'Devyat assoc. North Section 3'],
             ['Identity' => 'The Princess of La Manchaland'],
             ['Identity' => 'Heishou Pack - Si Branch'],
-            ['Identity' => 'Lobotomy E.G.O::The Sword Sharpened with Tears'],
+            ['Identity' => 'Lobotomy E.G.O The Sword Sharpened with Tears'],
         ]);
     }
 

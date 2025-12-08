@@ -21,7 +21,7 @@ return new class extends Migration
             ['Identity' => 'LCB Sinner'],
             ['Identity' => 'Shi Assoc. South Section 5 Director'],
             ['Identity' => 'N Corp. Mittelhammer'],
-            ['Identity' => 'Lobotomy E.G.O::Lantern'],
+            ['Identity' => 'Lobotomy E.G.O Lantern'],
             ['Identity' => 'Blade Lineage Salsu'],
             ['Identity' => 'W Corp. L3 Cleanup Agent'],
             ['Identity' => 'Cinq Assoc. South Section 5 Director'],
@@ -29,7 +29,7 @@ return new class extends Migration
             ['Identity' => 'T Corp. Class 3 Collection Staff'],
             ['Identity' => 'The Manager Of La Manchaland'],
             ['Identity' => 'Cinq Assoc. East Section 3'],
-            ['Identity' => 'Lobotomy E.G.O::In The Name of Love and Hate'],
+            ['Identity' => 'Lobotomy E.G.O In The Name of Love and Hate'],
             ['Identity' => 'Heishou Pack - Wei Branch'],
         ]);
     }

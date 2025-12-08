@@ -61,10 +61,10 @@ class mirrorDungeonsController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'floor' => 'required|integer',
+            'floor' => 'required|integer|min:1|max:15',
             'difficulty' => 'required',
-            'adversity' => 'required|integer',
             'keyword' => 'required',
+            'adversity' => 'nullable|min:0|max:50',
             'YiSangId' => 'required',
             'FaustId' => 'required',
             'DonQuixoteId' => 'required',
