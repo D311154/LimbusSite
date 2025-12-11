@@ -23,7 +23,7 @@ class mirrorDungeonsController extends Controller
 {
     public function index()
     {
-        $mirrorDungeons = mirrorDungeons::all();
+        $mirrorDungeons = mirrorDungeons::latest()->get();
         return view('LimbusCompany.index')->with('mirrorDungeons', $mirrorDungeons);
     }
 
