@@ -16,6 +16,7 @@
         <p>the front end is being worked on... slowly but surely.</p>
         <p>see table below for mirror dungeon runs:</p>
 
+        <div class="table-container">
         <table>
             <thead>
                 <th>Floor</th>
@@ -58,6 +59,11 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
 
+        <h2>Statistics</h2>
+        <div class="stats">
+
+        </div>
     </body>
 </html>
