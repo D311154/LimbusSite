@@ -11,7 +11,7 @@ h1 {
     font-weight: 700;
 }
 
-/* Table Styles */
+/* ----------styling tabel---------- */
 .table-container {
     margin: 20px 0 60px 0;
     background-color: #fff;
@@ -24,28 +24,10 @@ table {
     width: 100%;
     max-width: 100%;
     border-collapse: collapse;
-    display: block;
 }
 
 thead {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-}
-
-tbody {
-    display: block;
-    max-height: 330px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    position: relative;
-    z-index: 1;
-}
-
-tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
+    display: table-header-group;
 }
 
 thead {
@@ -73,14 +55,6 @@ th:last-child {
 
 tbody tr {
     border-bottom: 1px solid #e5e7eb;
-    transition: background-color 0.2s ease;
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-}
-
-tbody tr:hover {
-    background-color: #f9fafb;
 }
 
 tbody tr:last-child {
@@ -101,13 +75,4 @@ td {
     display: block;
     margin: 0 auto;
     border-radius: 4px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-}
-
-.identity-img:hover {
-    transform: scale(1.4);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    position: relative;
-    z-index: 1000;
 }

@@ -25,7 +25,7 @@ return new class extends Migration
             ['Identity' => 'T Corp. Class 2 Collection Staff'],
             ['Identity' => 'Kurokumo Clan Wakashu'],
             ['Identity' => 'Rosespanner Workshop Rep'],
-            ['Identity' => 'Dieci Assoc. Section 4'],
+            ['Identity' => 'Dieci Assoc. South Section 4'],
             ['Identity' => 'Liu Assoc. South Section 4 Director'],
             ['Identity' => 'Devyat assoc. North Section 3'],
             ['Identity' => 'The Princess of La Manchaland'],

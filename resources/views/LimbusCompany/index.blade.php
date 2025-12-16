@@ -61,5 +61,9 @@
         </table>
         </div>
 
+        <h2>Statistics</h2>
+        <div class="stats">
+
+        </div>
     </body>
 </html>
