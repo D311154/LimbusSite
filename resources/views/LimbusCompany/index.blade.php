@@ -63,7 +63,86 @@
 
         <h2>Statistics</h2>
         <div class="stats">
-
+            <div class="chart-container">
+                <canvas id="keywordPieChart"></canvas>
+            </div>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const ctx = document.getElementById('keywordPieChart').getContext('2d');
+
+            // Define colors for each keyword
+            const keywordColors = {
+                'bleed': { bg: 'rgba(200, 30, 33)', border: 'rgba(109, 0, 0)' },
+                'blunt': { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgba(168, 85, 247, 1)' },
+                'burn': { bg: 'rgba(236, 38, 74)', border: 'rgba(236, 174, 38)' },
+                'charge': { bg: 'rgba(24, 233, 230)', border: 'rgba(0, 146, 208)' },
+                'pierce': { bg: 'rgba(251, 191, 36, 0.8)', border: 'rgba(251, 191, 36, 1)' },
+                'poise': { bg: 'rgba(202, 208, 210)', border: 'rgba(97, 165, 163)' },
+                'rupture': { bg: 'rgba(24, 236, 196)', border: 'rgba(16, 163, 142)' },
+                'sinking': { bg: 'rgba(27, 128, 236)', border: 'rgba(0, 148, 255)' },
+                'slash': { bg: 'rgba(236, 72, 153, 0.8)', border: 'rgba(236, 72, 153, 1)' },
+                'tremor': { bg: 'rgba(244, 212, 172)', border: 'rgba(255, 141, 0)' }
+            };
+
+            const keywords = [
+                @foreach($keywordStats as $stat)
+                    '{{ $stat->keyword }}',
+                @endforeach
+            ];
+
+            const backgroundColors = keywords.map(keyword => keywordColors[keyword]?.bg || 'rgba(128, 128, 128, 0.8)');
+            const borderColors = keywords.map(keyword => keywordColors[keyword]?.border || 'rgba(128, 128, 128, 1)');
+
+            const keywordData = {
+                labels: keywords,
+                datasets: [{
+                    label: 'Keyword Usage',
+                    data: [
+                        @foreach($keywordStats as $stat)
+                            {{ $stat->count }},
+                        @endforeach
+                    ],
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
+                    borderWidth: 2
+                }]
+            };
+
+            const config = {
+                type: 'pie',
+                data: keywordData,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                font: {
+                                    size: 14
+                                },
+                                padding: 15
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    let value = context.parsed || 0;
+                                    let total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    let percentage = ((value / total) * 100).toFixed(1);
+                                    return label + ': ' + value + ' (' + percentage + '%)';
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const keywordPieChart = new Chart(ctx, config);
+        </script>
     </body>
 </html>

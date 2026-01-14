@@ -24,7 +24,16 @@ class mirrorDungeonsController extends Controller
     public function index()
     {
         $mirrorDungeons = mirrorDungeons::latest()->take(5)->get();
-        return view('LimbusCompany.index')->with('mirrorDungeons', $mirrorDungeons);
+
+        // Calculate keyword statistics
+        $keywordStats = mirrorDungeons::selectRaw('keyword, COUNT(*) as count')
+            ->groupBy('keyword')
+            ->orderBy('count', 'desc')
+            ->get();
+
+        return view('LimbusCompany.index')
+            ->with('mirrorDungeons', $mirrorDungeons)
+            ->with('keywordStats', $keywordStats);
     }
 
     public function create()

@@ -47,7 +47,6 @@
         <label>Keyword:</label>
         <select name="keyword">
             <option value=""></option>
-            <option value="keywordless">keywordless</option>
             <option value="bleed">bleed</option>
             <option value="blunt">blunt</option>
             <option value="burn">burn</option>
