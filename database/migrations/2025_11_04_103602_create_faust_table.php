@@ -31,6 +31,7 @@ return new class extends Migration
             ['Identity' => 'LCE E.G.O Ardor Blossom Star'],
             ['Identity' => 'Heishou Pack - Mao Branch Adept'],
             ['Identity' => 'Shi Assoc. East Section 3'],
+            ['Identity' => 'The Index Proselyte - Paper Slip'],
         ]);
     }
 
