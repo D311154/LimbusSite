@@ -31,6 +31,7 @@ return new class extends Migration
             ['Identity' => 'The Barber of La Manchaland'],
             ['Identity' => 'Heishou Pack - Mao Branch'],
             ['Identity' => 'T Corp. Class 3 VDCU Staff'],
+            ['Identity' => 'LCA Udjat Vanguard Team 3 Leader'],
         ]);
     }
 

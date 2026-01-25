@@ -31,6 +31,7 @@ return new class extends Migration
             ['Identity' => 'Cinq Assoc. East Section 3'],
             ['Identity' => 'Lobotomy E.G.O In The Name of Love and Hate'],
             ['Identity' => 'Heishou Pack - Wei Branch'],
+            ['Identity' => 'The Index Proxy - Effloresced E.G.O Procuration'],
         ]);
     }
 
