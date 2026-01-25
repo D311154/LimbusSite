@@ -31,6 +31,7 @@ return new class extends Migration
             ['Identity' => 'Kurokumo Clan Captain'],
             ['Identity' => 'Family Hierarch Candidate'],
             ['Identity' => 'Jeongs Office Rep'],
+            ['Identity' => 'The House of Spiders - The Middle Apprentice']
         ]);
     }
 
