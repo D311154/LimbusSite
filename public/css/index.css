@@ -78,4 +78,9 @@ td {
     border-radius: 4px;
 }
 
-/* ----------styling base site---------- */
+/* ----------styling chart---------- */
+.chart-container {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}

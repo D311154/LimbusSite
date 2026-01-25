@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('floor');
             $table->enum('difficulty', ['normal', 'hard']);
             $table->integer('adversity')->nullable();
-            $table->enum('keyword', ['keywordless', 'bleed', 'blunt', 'burn', 'charge', 'pierce', 'poise', 'rupture', 'sinking', 'slash', 'tremor']);
+            $table->enum('keyword', ['bleed', 'blunt', 'burn', 'charge', 'pierce', 'poise', 'rupture', 'sinking', 'slash', 'tremor']);
             $table->foreignId('YiSangId')->constrained('yi_sang')->onDelete('cascade');
             $table->foreignId('FaustId')->constrained('faust')->onDelete('cascade');
             $table->foreignId('DonQuixoteId')->constrained('don_quixote')->onDelete('cascade');
