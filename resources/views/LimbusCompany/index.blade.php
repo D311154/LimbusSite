@@ -72,7 +72,6 @@
         <script>
             const ctx = document.getElementById('keywordPieChart').getContext('2d');
 
-            // Define colors for each keyword
             const keywordColors = {
                 'bleed': { bg: 'rgba(200, 30, 33)', border: 'rgba(109, 0, 0)' },
                 'blunt': { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgba(168, 85, 247, 1)' },
