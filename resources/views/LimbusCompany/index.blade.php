@@ -43,28 +43,32 @@
                         <td>{{ $mirrorDungeon->difficulty }}</td>
                         <td>{{ $mirrorDungeon->adversity }}</td>
                         <td>{{ $mirrorDungeon->keyword }}</td>
-                        <td><img src="{{ asset('images/YiSang/' . $mirrorDungeon->yiSang->Identity . '.png') }}" alt="{{ $mirrorDungeon->yiSang->Identity }}" title="{{ $mirrorDungeon->yiSang->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Faust/' . $mirrorDungeon->faust->Identity . '.png') }}" alt="{{ $mirrorDungeon->faust->Identity }}" title="{{ $mirrorDungeon->faust->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/DonQuixote/' . $mirrorDungeon->donQuixote->Identity . '.png') }}" alt="{{ $mirrorDungeon->donQuixote->Identity }}" title="{{ $mirrorDungeon->donQuixote->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Ryoshu/' . $mirrorDungeon->ryoshu->Identity . '.png') }}" alt="{{ $mirrorDungeon->ryoshu->Identity }}" title="{{ $mirrorDungeon->ryoshu->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Meursault/' . $mirrorDungeon->meursault->Identity . '.png') }}" alt="{{ $mirrorDungeon->meursault->Identity }}" title="{{ $mirrorDungeon->meursault->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/HongLu/' . $mirrorDungeon->hongLu->Identity . '.png') }}" alt="{{ $mirrorDungeon->hongLu->Identity }}" title="{{ $mirrorDungeon->hongLu->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Heathcliff/' . $mirrorDungeon->heathcliff->Identity . '.png') }}" alt="{{ $mirrorDungeon->heathcliff->Identity }}" title="{{ $mirrorDungeon->heathcliff->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Ishmael/' . $mirrorDungeon->ishmael->Identity . '.png') }}" alt="{{ $mirrorDungeon->ishmael->Identity }}" title="{{ $mirrorDungeon->ishmael->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Rodion/' . $mirrorDungeon->rodion->Identity . '.png') }}" alt="{{ $mirrorDungeon->rodion->Identity }}" title="{{ $mirrorDungeon->rodion->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Sinclair/' . $mirrorDungeon->sinclair->Identity . '.png') }}" alt="{{ $mirrorDungeon->sinclair->Identity }}" title="{{ $mirrorDungeon->sinclair->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Outis/' . $mirrorDungeon->outis->Identity . '.png') }}" alt="{{ $mirrorDungeon->outis->Identity }}" title="{{ $mirrorDungeon->outis->Identity }}" class="identity-img"></td>
-                        <td><img src="{{ asset('images/Gregor/' . $mirrorDungeon->gregor->Identity . '.png') }}" alt="{{ $mirrorDungeon->gregor->Identity }}" title="{{ $mirrorDungeon->gregor->Identity }}" class="identity-img"></td>
+                        <td><img src="{{ asset('images/YiSang/' . $mirrorDungeon->yiSang->Identity . '.png') }}" alt="{{ $mirrorDungeon->yiSang->Identity }}" title="{{ $mirrorDungeon->yiSang->Identity }}" class="identity-img {{ $mirrorDungeon->YiSangBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Faust/' . $mirrorDungeon->faust->Identity . '.png') }}" alt="{{ $mirrorDungeon->faust->Identity }}" title="{{ $mirrorDungeon->faust->Identity }}" class="identity-img {{ $mirrorDungeon->FaustBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/DonQuixote/' . $mirrorDungeon->donQuixote->Identity . '.png') }}" alt="{{ $mirrorDungeon->donQuixote->Identity }}" title="{{ $mirrorDungeon->donQuixote->Identity }}" class="identity-img {{ $mirrorDungeon->DonQuixoteBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Ryoshu/' . $mirrorDungeon->ryoshu->Identity . '.png') }}" alt="{{ $mirrorDungeon->ryoshu->Identity }}" title="{{ $mirrorDungeon->ryoshu->Identity }}" class="identity-img {{ $mirrorDungeon->RyoshuBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Meursault/' . $mirrorDungeon->meursault->Identity . '.png') }}" alt="{{ $mirrorDungeon->meursault->Identity }}" title="{{ $mirrorDungeon->meursault->Identity }}" class="identity-img {{ $mirrorDungeon->MeursaultBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/HongLu/' . $mirrorDungeon->hongLu->Identity . '.png') }}" alt="{{ $mirrorDungeon->hongLu->Identity }}" title="{{ $mirrorDungeon->hongLu->Identity }}" class="identity-img {{ $mirrorDungeon->HongLuBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Heathcliff/' . $mirrorDungeon->heathcliff->Identity . '.png') }}" alt="{{ $mirrorDungeon->heathcliff->Identity }}" title="{{ $mirrorDungeon->heathcliff->Identity }}" class="identity-img {{ $mirrorDungeon->HeathcliffBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Ishmael/' . $mirrorDungeon->ishmael->Identity . '.png') }}" alt="{{ $mirrorDungeon->ishmael->Identity }}" title="{{ $mirrorDungeon->ishmael->Identity }}" class="identity-img {{ $mirrorDungeon->IshmaelBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Rodion/' . $mirrorDungeon->rodion->Identity . '.png') }}" alt="{{ $mirrorDungeon->rodion->Identity }}" title="{{ $mirrorDungeon->rodion->Identity }}" class="identity-img {{ $mirrorDungeon->RodionBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Sinclair/' . $mirrorDungeon->sinclair->Identity . '.png') }}" alt="{{ $mirrorDungeon->sinclair->Identity }}" title="{{ $mirrorDungeon->sinclair->Identity }}" class="identity-img {{ $mirrorDungeon->SinclairBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Outis/' . $mirrorDungeon->outis->Identity . '.png') }}" alt="{{ $mirrorDungeon->outis->Identity }}" title="{{ $mirrorDungeon->outis->Identity }}" class="identity-img {{ $mirrorDungeon->OutisBenched ? 'benched' : '' }}"></td>
+                        <td><img src="{{ asset('images/Gregor/' . $mirrorDungeon->gregor->Identity . '.png') }}" alt="{{ $mirrorDungeon->gregor->Identity }}" title="{{ $mirrorDungeon->gregor->Identity }}" class="identity-img {{ $mirrorDungeon->GregorBenched ? 'benched' : '' }}"></td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
         </div>
+        <h6><i>*Identities being greyed out indicates them not being used in battle as an active unit OR for their support passive.</i></h6>
 
         <h2>Statistics</h2>
         <div class="stats">
             <div class="chart-container">
                 <canvas id="keywordPieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="topIdentitiesChart"></canvas>
             </div>
         </div>
 
@@ -126,6 +130,13 @@
                                 padding: 15
                             }
                         },
+                        title: {
+                            display: true,
+                            text: 'Most Used Keywords',
+                            font: {
+                                size: 16
+                            }
+                        },
                         tooltip: {
                             callbacks: {
                                 label: function(context) {
@@ -142,6 +153,84 @@
             };
 
             const keywordPieChart = new Chart(ctx, config);
+
+
+
+            const ctx2 = document.getElementById('topIdentitiesChart').getContext('2d');
+
+            const topIdentitiesData = {
+                labels: [
+                    @foreach($topIdentities as $identity => $count)
+                        '{{ $identity }}',
+                    @endforeach
+                ],
+                datasets: [{
+                    label: 'Times Used',
+                    data: [
+                        @foreach($topIdentities as $identity => $count)
+                            {{ $count }},
+                        @endforeach
+                    ],
+                    backgroundColor: 'rgba(74, 144, 226, 0.8)',
+                    borderColor: 'rgba(74, 144, 226, 1)',
+                    borderWidth: 2
+                }]
+            };
+
+            const topIdentitiesConfig = {
+                type: 'bar',
+                data: topIdentitiesData,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                font: {
+                                    size: 11
+                                },
+                                callback: function(value, index, values) {
+                                    const label = this.getLabelForValue(value);
+                                    const maxLength = 30;
+                                    if (label.length > maxLength) {
+                                        return label.substring(0, maxLength) + '...';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        },
+                        title: {
+                            display: true,
+                            text: 'Most Used Identities',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(context) {
+                                    return context[0].label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const topIdentitiesChart = new Chart(ctx2, topIdentitiesConfig);
         </script>
     </body>
 </html>

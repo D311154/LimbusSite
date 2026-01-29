@@ -180,6 +180,59 @@
         </select>
     </div>
 
+    <h3>Benched sinners:</h3>
+
+    <div class="benched-container">
+        <div class="benched-item">
+            <img src="{{ asset('images/YiSang/Yi_Sang_Icon.png') }}" alt="Yi Sang" class="sinner-icon">
+            <input type="checkbox" name="YiSangBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Faust/Faust_Icon.png') }}" alt="Faust" class="sinner-icon">
+            <input type="checkbox" name="FaustBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/DonQuixote/Don_Quixote_Icon.png') }}" alt="Don Quixote" class="sinner-icon">
+            <input type="checkbox" name="DonQuixoteBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Ryoshu/Ryoshu_Icon.png') }}" alt="Ryoshu" class="sinner-icon">
+            <input type="checkbox" name="RyoshuBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Meursault/Meursault_Icon.png') }}" alt="Meursault" class="sinner-icon">
+            <input type="checkbox" name="MeursaultBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/HongLu/Hong_Lu_Icon.png') }}" alt="Hong Lu" class="sinner-icon">
+            <input type="checkbox" name="HongLuBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Heathcliff/Heathcliff_Icon.png') }}" alt="Heathcliff" class="sinner-icon">
+            <input type="checkbox" name="HeathcliffBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Ishmael/Ishmael_Icon.png') }}" alt="Ishmael" class="sinner-icon">
+            <input type="checkbox" name="IshmaelBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Rodion/Rodion_Icon.png') }}" alt="Rodion" class="sinner-icon">
+            <input type="checkbox" name="RodionBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Sinclair/Sinclair_Icon.png') }}" alt="Sinclair" class="sinner-icon">
+            <input type="checkbox" name="SinclairBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Outis/Outis_Icon.png') }}" alt="Outis" class="sinner-icon">
+            <input type="checkbox" name="OutisBenched" value="1">
+        </div>
+        <div class="benched-item">
+            <img src="{{ asset('images/Gregor/Gregor_Icon.png') }}" alt="Gregor" class="sinner-icon">
+            <input type="checkbox" name="GregorBenched" value="1">
+        </div>
+    </div>
+
     <input type="submit" value="Save">
 </form>
 
