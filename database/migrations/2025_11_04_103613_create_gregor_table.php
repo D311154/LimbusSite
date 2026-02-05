@@ -31,6 +31,7 @@ return new class extends Migration
             ['Identity' => 'Firefist Office Survivor'],
             ['Identity' => 'Heishou Pack - Si branch'],
             ['Identity' => 'Night Awls Capitano'],
+            ['Identity' => 'Lobotomy E.G.O Lamp']
         ]);
     }
 

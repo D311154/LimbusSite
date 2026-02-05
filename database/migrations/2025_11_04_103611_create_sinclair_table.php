@@ -32,6 +32,7 @@ return new class extends Migration
             ['Identity' => 'The Middle Little Brother'],
             ['Identity' => 'The Thumb East Soldato II'],
             ['Identity' => 'Heishou Pack - You Branch'],
+            ['Identity' => 'The House of Spiders - The Pinky Apprentice']
         ]);
     }
 
