@@ -14,7 +14,7 @@
 
         <p>this project is still a work in progress.</p>
         <p>the front end is being worked on... slowly but surely.</p>
-        <p>see table below for mirror dungeon runs:</p>
+        <h2>5 Most recent runs:</h2>
 
         <div class="table-container">
         <table>
@@ -60,7 +60,7 @@
             </tbody>
         </table>
         </div>
-        <h6><i>*Identities being greyed out indicates them not being used in battle as an active unit OR for their support passive.</i></h6>
+        <h6><i>*Identities being greyed out indicates them not being considered a "used ID" as they were not intended to be used for neither combat or their support passive.</i></h6>
 
         <h2>Statistics</h2>
         <div class="stats">
