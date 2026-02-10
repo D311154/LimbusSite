@@ -15,6 +15,7 @@ use App\Models\Rodion;
 use App\Models\Sinclair;
 use App\Models\Outis;
 use App\Models\Gregor;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 use function Laravel\Prompts\table;
@@ -155,10 +156,39 @@ class mirrorDungeonsController extends Controller
         arsort($identityUsage);
         $topIdentities = array_slice($identityUsage, 0, 5, true);
 
+        // Calculate most neglected (benched) sinner
+        $benchedCounts = [
+            'Yi Sang' => mirrorDungeons::where('YiSangBenched', true)->count(),
+            'Faust' => mirrorDungeons::where('FaustBenched', true)->count(),
+            'Don Quixote' => mirrorDungeons::where('DonQuixoteBenched', true)->count(),
+            'Ryoshu' => mirrorDungeons::where('RyoshuBenched', true)->count(),
+            'Meursault' => mirrorDungeons::where('MeursaultBenched', true)->count(),
+            'Hong Lu' => mirrorDungeons::where('HongLuBenched', true)->count(),
+            'Heathcliff' => mirrorDungeons::where('HeathcliffBenched', true)->count(),
+            'Ishmael' => mirrorDungeons::where('IshmaelBenched', true)->count(),
+            'Rodion' => mirrorDungeons::where('RodionBenched', true)->count(),
+            'Sinclair' => mirrorDungeons::where('SinclairBenched', true)->count(),
+            'Outis' => mirrorDungeons::where('OutisBenched', true)->count(),
+            'Gregor' => mirrorDungeons::where('GregorBenched', true)->count(),
+        ];
+        
+        arsort($benchedCounts);
+        $mostNeglectedSinner = array_key_first($benchedCounts);
+        $mostNeglectedCount = $benchedCounts[$mostNeglectedSinner];
+        
+        // Format sinner name for image path (remove spaces)
+        $mostNeglectedSinnerPath = str_replace(' ', '', $mostNeglectedSinner);
+
+        $comments = Comment::with('user')->latest()->take(20)->get();
+
         return view('LimbusCompany.index')
             ->with('mirrorDungeons', $mirrorDungeons)
             ->with('keywordStats', $keywordStats)
-            ->with('topIdentities', $topIdentities);
+            ->with('topIdentities', $topIdentities)
+            ->with('mostNeglectedSinner', $mostNeglectedSinner)
+            ->with('mostNeglectedSinnerPath', $mostNeglectedSinnerPath)
+            ->with('mostNeglectedCount', $mostNeglectedCount)
+            ->with('comments', $comments);
     }
 
     public function create()

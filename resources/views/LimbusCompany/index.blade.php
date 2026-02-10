@@ -9,7 +9,20 @@
 
         <header>
             <h1>Wiry's Mirror Dungeon Tracker</h1>
-            <a href="{{ route('LimbusCompany.create') }}">New Entry</a>
+            <nav>
+                @auth
+                    @if(auth()->user()->id === 1)
+                        <a href="{{ route('LimbusCompany.create') }}">New Entry</a>
+                    @endif
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit">Logout</button>
+                    </form>
+                @else
+                    <a href="{{ route('login') }}">Login</a>
+                    <a href="{{ route('register') }}">Register</a>
+                @endauth
+            </nav>
         </header>
 
         <p>this project is still a work in progress.</p>
@@ -57,6 +70,7 @@
                         <td><img src="{{ asset('images/Gregor/' . $mirrorDungeon->gregor->Identity . '.png') }}" alt="{{ $mirrorDungeon->gregor->Identity }}" title="{{ $mirrorDungeon->gregor->Identity }}" class="identity-img {{ $mirrorDungeon->GregorBenched ? 'benched' : '' }}"></td>
                     </tr>
                 @endforeach
+                <!-- "wow wiry thats lowkey pretty smart" thanks i did not care about optimization at all when making it -->
             </tbody>
         </table>
         </div>
@@ -70,7 +84,63 @@
             <div class="chart-container">
                 <canvas id="topIdentitiesChart"></canvas>
             </div>
+            <div class="chart-container">
+                <div class="most-neglected-container">
+                    <h3>Most Neglected Sinner</h3>
+                    <div class="neglected-sinner-display">
+                        <img src="{{ asset('images/' . $mostNeglectedSinnerPath . '/LCB Sinner.png') }}"
+                             alt="{{ $mostNeglectedSinner }}"
+                             title="{{ $mostNeglectedSinner }}"
+                             class="lcb-sinner-img">
+                        <p class="sinner-name">{{ $mostNeglectedSinner }}</p>
+                        <p class="bench-count">went unused in {{ $mostNeglectedCount }} runs</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <h2>Comments</h2>
+        <div class="comments-section">
+            @auth
+                <div class="comment-form">
+                    <form method="POST" action="{{ route('comments.store') }}">
+                        @csrf
+                        <textarea name="comment" placeholder="Write a comment..." required></textarea>
+                        <button type="submit">Post Comment</button>
+                    </form>
+                </div>
+            @endauth
+
+            <div class="comments-display">
+                @forelse($comments as $comment)
+                    <div class="comment-wrapper">
+                        <div class="comment">
+                            <div class="comment-header">
+                                <strong>{{ $comment->user->name }}</strong>
+                                <span class="comment-date">{{ $comment->created_at->format('M j, Y \a\t g:i A') }}</span>
+                            </div>
+                            <div class="comment-body">
+                                {{ $comment->comment }}
+                            </div>
+                        </div>
+                        @auth
+                            @if(auth()->user()->id === 1 || auth()->user()->id === $comment->user_id)
+                                <form method="POST" action="{{ route('comments.destroy', $comment->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="delete-comment-btn" onclick="return confirm('Are you sure you want to delete this comment?')">Delete</button>
+                                </form>
+                            @endif
+                        @endauth
+                    </div>
+                @empty
+                    <p>No comments yet. Be the first to comment!</p>
+                @endforelse
+            </div>
+        </div>
+        <!-- i'd quite like to make it so that you can click through tabs of comments,
+            but i don't know how to do that. and i'm not going to try knowing. i've
+            done enough for this entire div -->
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
@@ -78,14 +148,14 @@
 
             const keywordColors = {
                 'bleed': { bg: 'rgba(200, 30, 33)', border: 'rgba(109, 0, 0)' },
-                'blunt': { bg: 'rgba(168, 85, 247, 0.8)', border: 'rgba(168, 85, 247, 1)' },
+                'blunt': { bg: 'rgba(126, 78, 148)', border: 'rgba(236, 202, 162)' },
                 'burn': { bg: 'rgba(236, 38, 74)', border: 'rgba(236, 174, 38)' },
                 'charge': { bg: 'rgba(24, 233, 230)', border: 'rgba(0, 146, 208)' },
-                'pierce': { bg: 'rgba(251, 191, 36, 0.8)', border: 'rgba(251, 191, 36, 1)' },
+                'pierce': { bg: 'rgba(178, 98, 46)', border: 'rgba(236, 202, 162)' },
                 'poise': { bg: 'rgba(202, 208, 210)', border: 'rgba(97, 165, 163)' },
                 'rupture': { bg: 'rgba(24, 236, 196)', border: 'rgba(16, 163, 142)' },
                 'sinking': { bg: 'rgba(27, 128, 236)', border: 'rgba(0, 148, 255)' },
-                'slash': { bg: 'rgba(236, 72, 153, 0.8)', border: 'rgba(236, 72, 153, 1)' },
+                'slash': { bg: 'rgba(24, 81, 134)', border: 'rgba(236, 202, 162)' },
                 'tremor': { bg: 'rgba(244, 212, 172)', border: 'rgba(255, 141, 0)' }
             };
 
@@ -232,5 +302,7 @@
 
             const topIdentitiesChart = new Chart(ctx2, topIdentitiesConfig);
         </script>
+        <!-- i did not enjoy working with this script i wish i could just do this in pure base PHP
+            and if that's possible, i haven't been taught nor have found out how-->
     </body>
 </html>

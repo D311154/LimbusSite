@@ -8,10 +8,11 @@
 </head>
 <body>
 
-<h1>You may add new mirror dungeon runs here.</h1>
-<p>in the complete version of the site, this is NOT a seperate page, but rather a widget only certain users (me) can use.</p>
+@auth
+    @if(auth()->user()->id === 1)
+        <h1>Answer me, Jia Baoyu. What does the mirror dungeon need?</h1>
 
-@if($errors->any())
+        @if($errors->any())
     <div style="color: red; background: #ffeeee; padding: 10px; margin: 10px 0;">
         <ul>
             @foreach ($errors->all() as $error)
@@ -179,8 +180,8 @@
             @endforeach
         </select>
     </div>
-
-    <h3>Benched sinners:</h3>
+    <h5>what the mirror dungeon needs... is kindness.</h5>
+    <h3>Unused sinners:</h3>
 
     <div class="benched-container">
         <div class="benched-item">
@@ -231,10 +232,22 @@
             <img src="{{ asset('images/Gregor/Gregor_Icon.png') }}" alt="Gregor" class="sinner-icon">
             <input type="checkbox" name="GregorBenched" value="1">
         </div>
+        <!-- I DONT LIKE HOW I DID THIS BUT IM TOO LAZY TO MAKE IT BETTER BECAUSE IT *WORKS* FUCKKKKKK -->
     </div>
 
     <input type="submit" value="Save">
 </form>
+
+    @else
+        <h1>Access Denied</h1>
+        <p>You do not have permission to access this page.</p>
+        <a href="{{ route('LimbusCompany.index') }}">Return to Home</a>
+    @endif
+@else
+    <h1>Access Denied</h1>
+    <p>You must be logged in and have sufficient permissions to access this page.</p>
+    <a href="{{ route('login') }}">Login</a>
+@endauth
 
 </body>
 </html>

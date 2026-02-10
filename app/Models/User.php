@@ -61,4 +61,12 @@ class User extends Authenticatable
             ->map(fn ($word) => Str::substr($word, 0, 1))
             ->implode('');
     }
+
+    /**
+     * Get the comments for the user
+     */
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
