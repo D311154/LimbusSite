@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\mirrorDungeonsController;
+use App\Http\Controllers\CommentsController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
@@ -10,7 +11,7 @@ Route::get('/', function () {
 })->name('home');
 
 Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
+    ->middleware(['auth'])
     ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
@@ -33,3 +34,11 @@ Route::middleware(['auth'])->group(function () {
 });
 
 route::resource('/LimbusCompany', mirrorDungeonsController::class);
+
+Route::post('/comments', [CommentsController::class, 'store'])
+    ->middleware('auth')
+    ->name('comments.store');
+
+Route::delete('/comments/{id}', [CommentsController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('comments.destroy');

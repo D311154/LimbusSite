@@ -5,18 +5,63 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: #333;
+    font-size: clamp(14px, 0.875rem + 0.2vw, 20px);
 }
 
 h1 {
     font-weight: 700;
 }
 
+nav {
+    display: flex;
+    gap: clamp(0.5rem, 0.75rem + 0.5vw, 1.5rem);
+    align-items: center;
+}
+
+nav a,
+nav button {
+    padding: clamp(0.4rem, 0.5rem + 0.3vw, 0.8rem) clamp(1rem, 1.25rem + 0.5vw, 2rem);
+    border-radius: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem);
+    font-weight: 600;
+    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+
+nav a {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    color: white;
+}
+
+nav a:hover {
+    box-shadow: 0 0.25rem 0.75rem rgba(16, 185, 129, 0.3);
+    transform: translateY(-0.125rem);
+}
+
+nav button {
+    background-color: #f87171;
+    color: white;
+}
+
+nav button:hover {
+    background-color: #ef4444;
+    transform: translateY(-0.125rem);
+}
+
+nav form {
+    margin: 0;
+    display: inline;
+}
+
 
 .table-container {
-    margin: 20px 0 60px 0;
+    margin: clamp(1rem, 1.25rem + 0.5vw, 2rem) 0 clamp(2.5rem, 3.75rem + 1vw, 5rem) 0;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem);
     overflow-x: auto;
     overflow-y: visible;
 }
@@ -34,28 +79,28 @@ thead {
 thead {
     background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
     color: white;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 th {
-    padding: 12px 8px;
+    padding: clamp(0.6rem, 0.75rem + 0.3vw, 1.2rem) clamp(0.4rem, 0.5rem + 0.2vw, 0.8rem);
     text-align: center;
     font-weight: 600;
-    font-size: 14px;
+    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
     white-space: nowrap;
 }
 
 th:first-child {
-    border-top-left-radius: 8px;
+    border-top-left-radius: 0.5rem;
 }
 
 th:last-child {
-    border-top-right-radius: 8px;
+    border-top-right-radius: 0.5rem;
 }
 
 tbody tr {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 0.0625rem solid #e5e7eb;
 }
 
 tbody tr:last-child {
@@ -63,19 +108,19 @@ tbody tr:last-child {
 }
 
 td {
-    padding: 10px 8px;
+    padding: clamp(0.5rem, 0.625rem + 0.3vw, 1rem) clamp(0.4rem, 0.5rem + 0.2vw, 0.8rem);
     text-align: center;
-    font-size: 14px;
+    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
     position: relative;
     overflow: visible;
 }
 
 .identity-img {
-    width: 70px;
+    width: clamp(3.5rem, 4.375rem + 1vw, 6rem);
     height: auto;
     display: block;
     margin: 0 auto;
-    border-radius: 4px;
+    border-radius: clamp(0.2rem, 0.25rem + 0.1vw, 0.4rem);
 }
 
 .identity-img.benched {
@@ -86,14 +131,195 @@ td {
 
 .stats {
     display: flex;
-    gap: 40px;
+    gap: clamp(1.5rem, 2.5rem + 1vw, 4rem);
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: clamp(2rem, 2.5rem + 0.5vw, 3.5rem);
 }
 
 .chart-container {
-    width: 400px;
-    height: 300px;
+    width: clamp(20rem, 25rem + 2vw, 35rem);
+    height: clamp(15rem, 18.75rem + 2vw, 26rem);
+}
+
+.most-neglected-container {
+    text-align: center;
+    padding: 0 clamp(1rem, 1.25rem + 0.5vw, 2rem) clamp(1rem, 1.25rem + 0.5vw, 2rem) clamp(1rem, 1.25rem + 0.5vw, 2rem);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.most-neglected-container h3 {
+    font-size: clamp(0.9rem, 1rem + 0.3vw, 1.3rem);
+    font-weight: 600;
+    margin-top: clamp(0.25rem, 0.3125rem + 0.1vw, 0.5rem);
+    margin-bottom: clamp(1rem, 1.25rem + 0.3vw, 1.75rem);
+    color: #333;
+}
+
+.neglected-sinner-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.lcb-sinner-img {
+    width: clamp(7.5rem, 9.375rem + 2vw, 13rem);
+    height: auto;
+    border-radius: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.neglected-sinner-display .sinner-name {
+    font-size: clamp(1rem, 1.125rem + 0.3vw, 1.5rem);
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.neglected-sinner-display .bench-count {
+    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
+    color: #666;
+    margin: 0;
+}
+
+.comments-section {
+    max-width: clamp(40rem, 50rem + 5vw, 70rem);
+    margin: clamp(2rem, 2.5rem + 0.5vw, 3.5rem) 0;
+    padding: 0 clamp(1rem, 1.25rem + 0.5vw, 2rem);
+}
+
+.comment-form {
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    padding: clamp(1rem, 1.25rem + 0.5vw, 2rem);
+    border-radius: clamp(0.6rem, 0.75rem + 0.2vw, 1rem);
+    margin-bottom: clamp(1.5rem, 1.875rem + 0.5vw, 2.5rem);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+}
+
+.comment-form form {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.comment-form textarea {
+    flex: 1;
+    min-height: clamp(5rem, 6.25rem + 1vw, 8rem);
+    padding: clamp(0.6rem, 0.75rem + 0.3vw, 1.2rem) clamp(0.8rem, 1rem + 0.3vw, 1.5rem);
+    border: 0.125rem solid #d1d5db;
+    border-radius: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem);
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
+    resize: none;
+    transition: border-color 0.2s ease;
+}
+
+.comment-form textarea:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.1);
+}
+
+.comment-form button {
+    padding: clamp(0.5rem, 0.625rem + 0.3vw, 1rem) clamp(1.2rem, 1.5rem + 0.5vw, 2.2rem);
+    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    color: white;
+    border: none;
+    border-radius: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem);
+    font-weight: 600;
+    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+}
+
+.comment-form button:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(16, 185, 129, 0.3);
+}
+
+.comment-form button:active {
+    transform: translateY(0);
+}
+
+.comments-display {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1rem + 0.3vw, 1.5rem);
+}
+
+.comment-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+}
+
+.comment {
+    flex: 1;
+    background-color: #fff;
+    padding: clamp(0.8rem, 1rem + 0.3vw, 1.5rem) clamp(1rem, 1.25rem + 0.5vw, 2rem);
+    border-radius: clamp(0.5rem, 0.625rem + 0.2vw, 0.875rem);
+    border-left: clamp(0.2rem, 0.25rem + 0.1vw, 0.35rem) solid #10b981;
+    box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.comment:hover {
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-header strong {
+    color: #10b981;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 0.9375rem + 0.2vw, 1.2rem);
+}
+
+.comment-date {
+    color: #6b7280;
+    font-size: clamp(0.65rem, 0.75rem + 0.15vw, 0.95rem);
+    font-style: italic;
+}
+
+.delete-comment-btn {
+    background-color: #f87171;
+    border: none;
+    color: #fff;
+    font-size: clamp(0.65rem, 0.75rem + 0.15vw, 0.95rem);
+    font-weight: 600;
+    cursor: pointer;
+    padding: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem) clamp(0.8rem, 1rem + 0.3vw, 1.4rem);
+    border-radius: clamp(0.3rem, 0.375rem + 0.15vw, 0.55rem);
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+    height: fit-content;
+}
+
+.delete-comment-btn:hover {
+    background-color: #ef4444;
+}
+
+.comment-body {
+    color: #374151;
+    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
+    line-height: 1.6;
+    word-wrap: break-word;
+}
+
+.comments-display > p {
+    text-align: center;
+    color: #9ca3af;
+    font-style: italic;
+    padding: clamp(2rem, 2.5rem + 0.5vw, 3.5rem) 0;
 }
