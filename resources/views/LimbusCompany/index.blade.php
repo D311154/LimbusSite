@@ -86,14 +86,27 @@
             </div>
             <div class="chart-container">
                 <div class="most-neglected-container">
-                    <h3>Most Neglected Sinner</h3>
+                    <h3>Most Neglected Sinner(s)</h3>
                     <div class="neglected-sinner-display">
-                        <img src="{{ asset('images/' . $mostNeglectedSinnerPath . '/LCB Sinner.png') }}"
-                             alt="{{ $mostNeglectedSinner }}"
-                             title="{{ $mostNeglectedSinner }}"
-                             class="lcb-sinner-img">
-                        <p class="sinner-name">{{ $mostNeglectedSinner }}</p>
-                        <p class="bench-count">went unused in {{ $mostNeglectedCount }} runs</p>
+                        @if(empty($mostNeglectedSinners))
+                            <img src="{{ asset('images/ideal.png') }}"
+                                 alt="Ideal"
+                                 title="Ideal"
+                                 class="lcb-sinner-img">
+                            <p class="sinner-name">none of them :)</p>
+                            <p class="bench-count">this is quite ideal...</p>
+                        @else
+                            @foreach($mostNeglectedSinners as $sinner)
+                                <div class="neglected-sinner-item">
+                                    <img src="{{ asset('images/' . str_replace(' ', '', $sinner) . '/LCB Sinner.png') }}"
+                                         alt="{{ $sinner }}"
+                                         title="{{ $sinner }}"
+                                         class="lcb-sinner-img">
+                                    <p class="sinner-name">{{ $sinner }}</p>
+                                </div>
+                            @endforeach
+                            <p class="bench-count">went unused in {{ $mostNeglectedCount }} {{ $mostNeglectedCount == 1 ? 'run' : 'runs' }}</p>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -171,13 +171,23 @@ class mirrorDungeonsController extends Controller
             'Outis' => mirrorDungeons::where('OutisBenched', true)->count(),
             'Gregor' => mirrorDungeons::where('GregorBenched', true)->count(),
         ];
-        
+
         arsort($benchedCounts);
-        $mostNeglectedSinner = array_key_first($benchedCounts);
-        $mostNeglectedCount = $benchedCounts[$mostNeglectedSinner];
-        
-        // Format sinner name for image path (remove spaces)
-        $mostNeglectedSinnerPath = str_replace(' ', '', $mostNeglectedSinner);
+        $maxBenchedCount = max($benchedCounts);
+
+        // Handle cases: no one benched, or multiple sinners tied for most benched
+        if ($maxBenchedCount === 0) {
+            // No one has been benched
+            $mostNeglectedSinners = [];
+            $mostNeglectedCount = 0;
+        } else {
+            // Get all sinners with the maximum benched count (handles ties)
+            $mostNeglectedSinners = array_filter($benchedCounts, function($count) use ($maxBenchedCount) {
+                return $count === $maxBenchedCount;
+            });
+            $mostNeglectedSinners = array_keys($mostNeglectedSinners);
+            $mostNeglectedCount = $maxBenchedCount;
+        }
 
         $comments = Comment::with('user')->latest()->take(20)->get();
 
@@ -185,8 +195,7 @@ class mirrorDungeonsController extends Controller
             ->with('mirrorDungeons', $mirrorDungeons)
             ->with('keywordStats', $keywordStats)
             ->with('topIdentities', $topIdentities)
-            ->with('mostNeglectedSinner', $mostNeglectedSinner)
-            ->with('mostNeglectedSinnerPath', $mostNeglectedSinnerPath)
+            ->with('mostNeglectedSinners', $mostNeglectedSinners)
             ->with('mostNeglectedCount', $mostNeglectedCount)
             ->with('comments', $comments);
     }
