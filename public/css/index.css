@@ -84,10 +84,10 @@ thead {
 }
 
 th {
-    padding: clamp(0.6rem, 0.75rem + 0.3vw, 1.2rem) clamp(0.4rem, 0.5rem + 0.2vw, 0.8rem);
+    padding: clamp(0.5rem, 0.6rem + 0.2vw, 0.9rem) clamp(0.3rem, 0.4rem + 0.15vw, 0.6rem);
     text-align: center;
     font-weight: 600;
-    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
+    font-size: clamp(0.7rem, 0.8rem + 0.15vw, 1rem);
     white-space: nowrap;
 }
 
@@ -108,15 +108,15 @@ tbody tr:last-child {
 }
 
 td {
-    padding: clamp(0.5rem, 0.625rem + 0.3vw, 1rem) clamp(0.4rem, 0.5rem + 0.2vw, 0.8rem);
+    padding: clamp(0.4rem, 0.5rem + 0.2vw, 0.8rem) clamp(0.3rem, 0.35rem + 0.15vw, 0.5rem);
     text-align: center;
-    font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
+    font-size: clamp(0.7rem, 0.8rem + 0.15vw, 1rem);
     position: relative;
     overflow: visible;
 }
 
 .identity-img {
-    width: clamp(3.5rem, 4.375rem + 1vw, 6rem);
+    width: clamp(3rem, 3.5rem + 0.5vw, 4.5rem);
     height: auto;
     display: block;
     margin: 0 auto;
@@ -174,13 +174,13 @@ td {
     gap: 0.25rem;
 }
 
-/* Wrap multiple sinners in a row */
+
 .neglected-sinner-display {
     flex-wrap: wrap;
     justify-content: center;
 }
 
-/* When there are multiple sinners, display them in a row */
+
 .neglected-sinner-display:has(.neglected-sinner-item) {
     flex-direction: row;
     gap: clamp(1rem, 1.25rem + 0.5vw, 2rem);
@@ -277,6 +277,29 @@ td {
     display: flex;
     flex-direction: column;
     gap: clamp(0.8rem, 1rem + 0.3vw, 1.5rem);
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+
+.comments-display::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.comments-display::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 0.25rem;
+}
+
+.comments-display::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 0.25rem;
+    transition: background 0.2s ease;
+}
+
+.comments-display::-webkit-scrollbar-thumb:hover {
+    background: #059669;
 }
 
 .comment-wrapper {
