@@ -315,7 +315,6 @@
 
             const topIdentitiesChart = new Chart(ctx2, topIdentitiesConfig);
         </script>
-        <!-- i did not enjoy working with this script i wish i could just do this in pure base PHP
-            and if that's possible, i haven't been taught nor have found out how-->
+        <!-- this script sure was interesting to work with -->
     </body>
 </html>

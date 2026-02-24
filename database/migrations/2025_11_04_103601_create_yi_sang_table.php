@@ -32,6 +32,7 @@ return new class extends Migration
             ['Identity' => 'Liu Assoc. South Section 3'],
             ['Identity' => 'N Corp. E.G.O Fell Bullet'],
             ['Identity' => 'Heishou Pack - Wu Branch Adept'],
+            ['Identity' => 'The House of Spiders - The Index Nursefather'],
         ]);
     }
 
