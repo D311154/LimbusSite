@@ -31,6 +31,7 @@ return new class extends Migration
             ['Identity' => 'Cinq Assoc. West Section 3'],
             ['Identity' => 'The Thumb East Capo IIII'],
             ['Identity' => 'The Prince of La Manchaland'],
+            ['Identity' => 'Lobotomy E.G.O Hornet [Alteration]'],
         ]);
     }
 

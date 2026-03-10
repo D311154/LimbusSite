@@ -1,10 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(1rem, 1.5rem + 0.5vw, 2rem);
+}
+
+header h1 {
+    width: 100%;
+}
+
+header nav {
+    flex: 0 0 auto;
+}
+
+header img {
+    height: clamp(7rem, 10rem + 1.5vw, 14rem);
+    width: auto;
+    object-fit: contain;
+}
+
+header img:first-of-type {
+    margin-left: clamp(6rem, 10rem + 3vw, 16rem);
+}
+
+header img:not(:first-of-type) {
+    margin-left: clamp(0.5rem, 0.75rem + 0.25vw, 1rem);
+}
+
+.shark-image {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    transform-origin: center center;
+}
+
+.shark-image:hover {
+    transform: scale(1.15);
+}
+
+.jerma-gif {
+    background-color: #000000 !important;
+}
 
 body {
+    background-color: #222222;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: whitesmoke;
     font-size: clamp(14px, 0.875rem + 0.2vw, 20px);
 }
 
@@ -32,23 +75,13 @@ nav button {
 }
 
 nav a {
-    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    background: #ecbb04;
     color: white;
-}
-
-nav a:hover {
-    box-shadow: 0 0.25rem 0.75rem rgba(16, 185, 129, 0.3);
-    transform: translateY(-0.125rem);
 }
 
 nav button {
-    background-color: #f87171;
+    background-color: #810000;
     color: white;
-}
-
-nav button:hover {
-    background-color: #ef4444;
-    transform: translateY(-0.125rem);
 }
 
 nav form {
@@ -59,7 +92,7 @@ nav form {
 
 .table-container {
     margin: clamp(1rem, 1.25rem + 0.5vw, 2rem) 0 clamp(2.5rem, 3.75rem + 1vw, 5rem) 0;
-    background-color: #fff;
+    background-color: #333444;
     box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
     border-radius: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem);
     overflow-x: auto;
@@ -77,7 +110,7 @@ thead {
 }
 
 thead {
-    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    background: #ecbb04;
     color: white;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
@@ -157,7 +190,7 @@ td {
     font-weight: 600;
     margin-top: clamp(0.25rem, 0.3125rem + 0.1vw, 0.5rem);
     margin-bottom: clamp(1rem, 1.25rem + 0.3vw, 1.75rem);
-    color: #333;
+    color: whitesmoke;
 }
 
 .neglected-sinner-display {
@@ -165,6 +198,10 @@ td {
     flex-direction: column;
     align-items: center;
     gap: 0.25rem;
+}
+
+.sinner-name {
+    color: whitesmoke;
 }
 
 .neglected-sinner-item {
@@ -194,6 +231,7 @@ td {
 }
 
 /* Smaller images when there are multiple sinners */
+
 .neglected-sinner-item .lcb-sinner-img {
     width: clamp(5rem, 6.25rem + 1.5vw, 9rem);
 }
@@ -201,13 +239,13 @@ td {
 .neglected-sinner-display .sinner-name {
     font-size: clamp(1rem, 1.125rem + 0.3vw, 1.5rem);
     font-weight: 600;
-    color: #333;
+    color: whitesmoke;
     margin: 0;
 }
 
 .neglected-sinner-display .bench-count {
     font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
-    color: #666;
+    color: whitesmoke;
     margin: 0;
     width: 100%;
     text-align: center;
@@ -247,13 +285,13 @@ td {
 
 .comment-form textarea:focus {
     outline: none;
-    border-color: #10b981;
+    border-color: #ecbb04;
     box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.1);
 }
 
 .comment-form button {
     padding: clamp(0.5rem, 0.625rem + 0.3vw, 1rem) clamp(1.2rem, 1.5rem + 0.5vw, 2.2rem);
-    background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    background: #ecbb04;
     color: white;
     border: none;
     border-radius: clamp(0.4rem, 0.5rem + 0.2vw, 0.75rem);
@@ -262,11 +300,6 @@ td {
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     white-space: nowrap;
-}
-
-.comment-form button:hover {
-    transform: translateY(-0.125rem);
-    box-shadow: 0 0.25rem 0.75rem rgba(16, 185, 129, 0.3);
 }
 
 .comment-form button:active {
@@ -293,13 +326,9 @@ td {
 }
 
 .comments-display::-webkit-scrollbar-thumb {
-    background: #10b981;
+    background: #ecbb04;
     border-radius: 0.25rem;
     transition: background 0.2s ease;
-}
-
-.comments-display::-webkit-scrollbar-thumb:hover {
-    background: #059669;
 }
 
 .comment-wrapper {
@@ -313,13 +342,9 @@ td {
     background-color: #fff;
     padding: clamp(0.8rem, 1rem + 0.3vw, 1.5rem) clamp(1rem, 1.25rem + 0.5vw, 2rem);
     border-radius: clamp(0.5rem, 0.625rem + 0.2vw, 0.875rem);
-    border-left: clamp(0.2rem, 0.25rem + 0.1vw, 0.35rem) solid #10b981;
+    border-left: clamp(0.2rem, 0.25rem + 0.1vw, 0.35rem) solid #ecbb04;
     box-shadow: 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.2s ease;
-}
-
-.comment:hover {
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
 }
 
 .comment-header {
@@ -330,7 +355,7 @@ td {
 }
 
 .comment-header strong {
-    color: #10b981;
+    color: #ecbb04;
     font-weight: 600;
     font-size: clamp(0.8rem, 0.9375rem + 0.2vw, 1.2rem);
 }
@@ -342,7 +367,7 @@ td {
 }
 
 .delete-comment-btn {
-    background-color: #f87171;
+    background-color: #810000;
     border: none;
     color: #fff;
     font-size: clamp(0.65rem, 0.75rem + 0.15vw, 0.95rem);
@@ -353,10 +378,6 @@ td {
     transition: background-color 0.2s ease;
     white-space: nowrap;
     height: fit-content;
-}
-
-.delete-comment-btn:hover {
-    background-color: #ef4444;
 }
 
 .comment-body {
@@ -372,3 +393,5 @@ td {
     font-style: italic;
     padding: clamp(2rem, 2.5rem + 0.5vw, 3.5rem) 0;
 }
+
+

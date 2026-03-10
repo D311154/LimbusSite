@@ -23,10 +23,12 @@
                     <a href="{{ route('register') }}">Register</a>
                 @endauth
             </nav>
+            <img src="{{ asset('images/AnotherAwesomeFuckingShark.png') }}" class="shark-image"></img>
+            <img src="{{ asset('images/JermaCharge.gif') }}" class="jerma-gif"></img>
+            <img src="{{ asset('images/awesome fuckin shark.png') }}" class="shark-image"></img>
         </header>
 
         <p>this project is still a work in progress.</p>
-        <p>the front end is being worked on... slowly but surely.</p>
         <h2>5 Most recent runs:</h2>
 
         <div class="table-container">
@@ -157,6 +159,8 @@
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script>
+            Chart.defaults.color = 'white';
+
             const ctx = document.getElementById('keywordPieChart').getContext('2d');
 
             const keywordColors = {
