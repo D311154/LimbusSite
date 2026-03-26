@@ -258,7 +258,7 @@ td {
 }
 
 .comment-form {
-    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    background: #333444;
     padding: clamp(1rem, 1.25rem + 0.5vw, 2rem);
     border-radius: clamp(0.6rem, 0.75rem + 0.2vw, 1rem);
     margin-bottom: clamp(1.5rem, 1.875rem + 0.5vw, 2.5rem);
@@ -339,7 +339,7 @@ td {
 
 .comment {
     flex: 1;
-    background-color: #fff;
+    background-color: #333444;
     padding: clamp(0.8rem, 1rem + 0.3vw, 1.5rem) clamp(1rem, 1.25rem + 0.5vw, 2rem);
     border-radius: clamp(0.5rem, 0.625rem + 0.2vw, 0.875rem);
     border-left: clamp(0.2rem, 0.25rem + 0.1vw, 0.35rem) solid #ecbb04;
@@ -381,7 +381,7 @@ td {
 }
 
 .comment-body {
-    color: #374151;
+    color: whitesmoke;
     font-size: clamp(0.75rem, 0.875rem + 0.2vw, 1.1rem);
     line-height: 1.6;
     word-wrap: break-word;

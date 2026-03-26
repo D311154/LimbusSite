@@ -32,6 +32,7 @@ return new class extends Migration
             ['Identity' => 'Heishou Pack - Si branch'],
             ['Identity' => 'Night Awls Capitano'],
             ['Identity' => 'Lobotomy E.G.O Lamp'],
+            ['Identity' => 'LCE E.G.O AEDD'],
         ]);
     }
 
