@@ -153,6 +153,7 @@
                 @endforelse
             </div>
         </div>
+
         <!-- i'd quite like to make it so that you can click through tabs of comments,
             but i don't know how to do that. and i'm not going to try knowing. i've
             done enough for this entire div -->
