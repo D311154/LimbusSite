@@ -72,7 +72,7 @@
                         <td><img src="{{ asset('images/Gregor/' . $mirrorDungeon->gregor->Identity . '.png') }}" alt="{{ $mirrorDungeon->gregor->Identity }}" title="{{ $mirrorDungeon->gregor->Identity }}" class="identity-img {{ $mirrorDungeon->GregorBenched ? 'benched' : '' }}"></td>
                     </tr>
                 @endforeach
-                <!-- "wow wiry thats lowkey pretty smart" thanks i did not care about optimization at all when making it -->
+                <!-- "wow wiry thats lowkey kinda ass" thanks i did not care about optimization at all when making it -->
             </tbody>
         </table>
         </div>

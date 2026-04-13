@@ -31,6 +31,7 @@ return new class extends Migration
             ['Identity' => 'Full-Stop Office Rep'],
             ['Identity' => 'R Corp. 4th Pack Reindeer'],
             ['Identity' => 'The Lord of Hongyuan'],
+            ['identity' => 'The House of Spiders - The Ring Nursefather'],
         ]);
     }
 

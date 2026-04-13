@@ -32,6 +32,7 @@ return new class extends Migration
             ['Identity' => 'Heishou Pack - Mao Branch Adept'],
             ['Identity' => 'Shi Assoc. East Section 3'],
             ['Identity' => 'The Index Proselyte - Paper Slip'],
+            ['Identity' => 'The House of Spiders - The Ring Apprentice'],
         ]);
     }
 
