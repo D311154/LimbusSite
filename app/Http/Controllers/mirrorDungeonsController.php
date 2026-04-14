@@ -237,7 +237,7 @@ class mirrorDungeonsController extends Controller
             'floor' => 'required|integer|min:1|max:15',
             'difficulty' => 'required',
             'keyword' => 'required',
-            'adversity' => 'nullable|min:0|max:50',
+            'adversity' => 'nullable|min:0|max:60',
             'YiSangId' => 'required',
             'FaustId' => 'required',
             'DonQuixoteId' => 'required',
