@@ -158,168 +158,24 @@
             but i don't know how to do that. and i'm not going to try knowing. i've
             done enough for this entire div -->
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            Chart.defaults.color = 'white';
+        @php
+            $keywordLabels = $keywordStats->pluck('keyword')->values();
+            $keywordCounts = $keywordStats->pluck('count')->values();
+            $topIdentityLabels = array_keys($topIdentities);
+            $topIdentityCounts = array_values($topIdentities);
+        @endphp
 
-            const ctx = document.getElementById('keywordPieChart').getContext('2d');
+        <div
+            id="index-chart-data"
+            data-keyword-labels='@json($keywordLabels)'
+            data-keyword-counts='@json($keywordCounts)'
+            data-top-identity-labels='@json($topIdentityLabels)'
+            data-top-identity-counts='@json($topIdentityCounts)'
+            hidden
+        ></div>
 
-            const keywordColors = {
-                'bleed': { bg: 'rgba(200, 30, 33)', border: 'rgba(109, 0, 0)' },
-                'blunt': { bg: 'rgba(126, 78, 148)', border: 'rgba(236, 202, 162)' },
-                'burn': { bg: 'rgba(236, 38, 74)', border: 'rgba(236, 174, 38)' },
-                'charge': { bg: 'rgba(24, 233, 230)', border: 'rgba(0, 146, 208)' },
-                'pierce': { bg: 'rgba(178, 98, 46)', border: 'rgba(236, 202, 162)' },
-                'poise': { bg: 'rgba(202, 208, 210)', border: 'rgba(97, 165, 163)' },
-                'rupture': { bg: 'rgba(24, 236, 196)', border: 'rgba(16, 163, 142)' },
-                'sinking': { bg: 'rgba(27, 128, 236)', border: 'rgba(0, 148, 255)' },
-                'slash': { bg: 'rgba(24, 81, 134)', border: 'rgba(236, 202, 162)' },
-                'tremor': { bg: 'rgba(244, 212, 172)', border: 'rgba(255, 141, 0)' }
-            };
-
-            const keywords = [
-                @foreach($keywordStats as $stat)
-                    '{{ $stat->keyword }}',
-                @endforeach
-            ];
-
-            const backgroundColors = keywords.map(keyword => keywordColors[keyword]?.bg || 'rgba(128, 128, 128, 0.8)');
-            const borderColors = keywords.map(keyword => keywordColors[keyword]?.border || 'rgba(128, 128, 128, 1)');
-
-            const keywordData = {
-                labels: keywords,
-                datasets: [{
-                    label: 'Keyword Usage',
-                    data: [
-                        @foreach($keywordStats as $stat)
-                            {{ $stat->count }},
-                        @endforeach
-                    ],
-                    backgroundColor: backgroundColors,
-                    borderColor: borderColors,
-                    borderWidth: 2
-                }]
-            };
-
-            const config = {
-                type: 'pie',
-                data: keywordData,
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                            labels: {
-                                font: {
-                                    size: 14
-                                },
-                                padding: 15
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: 'Most Used Keywords',
-                            font: {
-                                size: 16
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    let label = context.label || '';
-                                    let value = context.parsed || 0;
-                                    let total = context.dataset.data.reduce((a, b) => a + b, 0);
-                                    let percentage = ((value / total) * 100).toFixed(1);
-                                    return label + ': ' + value + ' (' + percentage + '%)';
-                                }
-                            }
-                        }
-                    }
-                }
-            };
-
-            const keywordPieChart = new Chart(ctx, config);
-
-
-
-            const ctx2 = document.getElementById('topIdentitiesChart').getContext('2d');
-
-            const topIdentitiesData = {
-                labels: [
-                    @foreach($topIdentities as $identity => $count)
-                        '{{ $identity }}',
-                    @endforeach
-                ],
-                datasets: [{
-                    label: 'Times Used',
-                    data: [
-                        @foreach($topIdentities as $identity => $count)
-                            {{ $count }},
-                        @endforeach
-                    ],
-                    backgroundColor: 'rgba(74, 144, 226, 0.8)',
-                    borderColor: 'rgba(74, 144, 226, 1)',
-                    borderWidth: 2
-                }]
-            };
-
-            const topIdentitiesConfig = {
-                type: 'bar',
-                data: topIdentitiesData,
-                options: {
-                    indexAxis: 'y',
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    scales: {
-                        x: {
-                            beginAtZero: true,
-                            ticks: {
-                                stepSize: 1
-                            }
-                        },
-                        y: {
-                            ticks: {
-                                font: {
-                                    size: 11
-                                },
-                                callback: function(value, index, values) {
-                                    const label = this.getLabelForValue(value);
-                                    const maxLength = 30;
-                                    if (label.length > maxLength) {
-                                        return label.substring(0, maxLength) + '...';
-                                    }
-                                    return label;
-                                }
-                            }
-                        }
-                    },
-                    plugins: {
-                        legend: {
-                            display: true,
-                            position: 'top'
-                        },
-                        title: {
-                            display: true,
-                            text: 'Most Used Identities',
-                            font: {
-                                size: 16
-                            }
-                        },
-                        tooltip: {
-                            callbacks: {
-                                title: function(context) {
-                                    return context[0].label;
-                                }
-                            }
-                        }
-                    }
-                }
-            };
-
-            const topIdentitiesChart = new Chart(ctx2, topIdentitiesConfig);
-        </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+        <script src="{{ asset('js/index-charts.js') }}?v={{ filemtime(public_path('js/index-charts.js')) }}" defer></script>
         <!-- this script sure was interesting to work with -->
     </body>
 </html>

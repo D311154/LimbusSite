@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Mirror Dungeon Run</title>
-    <link rel="stylesheet" href="{{ asset('css/create.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}?v={{ filemtime(public_path('css/create.css')) }}">
 </head>
 <body>
 
@@ -61,125 +61,40 @@
         </select>
     </div>
 
-    <div class="form-row">
-        <label>Yi Sang Id:</label>
-        <select name="YiSangId">
-            <option value=""></option>
-            @foreach($yiSangIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
+    @php
+        $sinnerPickers = [
+            ['key' => 'yi-sang', 'label' => 'Yi Sang', 'field' => 'YiSangId', 'folder' => 'YiSang', 'identities' => $yiSangIdentities],
+            ['key' => 'faust', 'label' => 'Faust', 'field' => 'FaustId', 'folder' => 'Faust', 'identities' => $faustIdentities],
+            ['key' => 'don-quixote', 'label' => 'Don Quixote', 'field' => 'DonQuixoteId', 'folder' => 'DonQuixote', 'identities' => $donQuixoteIdentities],
+            ['key' => 'ryoshu', 'label' => 'Ryoshu', 'field' => 'RyoshuId', 'folder' => 'Ryoshu', 'identities' => $ryoshuIdentities],
+            ['key' => 'meursault', 'label' => 'Meursault', 'field' => 'MeursaultId', 'folder' => 'Meursault', 'identities' => $meursaultIdentities],
+            ['key' => 'hong-lu', 'label' => 'Hong Lu', 'field' => 'HongLuId', 'folder' => 'HongLu', 'identities' => $hongLuIdentities],
+            ['key' => 'heathcliff', 'label' => 'Heathcliff', 'field' => 'HeathcliffId', 'folder' => 'Heathcliff', 'identities' => $heathcliffIdentities],
+            ['key' => 'ishmael', 'label' => 'Ishmael', 'field' => 'IshmaelId', 'folder' => 'Ishmael', 'identities' => $ishmaelIdentities],
+            ['key' => 'rodion', 'label' => 'Rodion', 'field' => 'RodionId', 'folder' => 'Rodion', 'identities' => $rodionIdentities],
+            ['key' => 'sinclair', 'label' => 'Sinclair', 'field' => 'SinclairId', 'folder' => 'Sinclair', 'identities' => $sinclairIdentities],
+            ['key' => 'outis', 'label' => 'Outis', 'field' => 'OutisId', 'folder' => 'Outis', 'identities' => $outisIdentities],
+            ['key' => 'gregor', 'label' => 'Gregor', 'field' => 'GregorId', 'folder' => 'Gregor', 'identities' => $gregorIdentities],
+        ];
+    @endphp
 
-    <div class="form-row">
-        <label>Faust Id:</label>
-        <select name="FaustId">
-            <option value=""></option>
-            @foreach($faustIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Don Quixote Id:</label>
-        <select name="DonQuixoteId">
-            <option value=""></option>
-            @foreach($donQuixoteIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Ryoshu Id:</label>
-        <select name="RyoshuId">
-            <option value=""></option>
-            @foreach($ryoshuIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Meursault Id:</label>
-        <select name="MeursaultId">
-            <option value=""></option>
-            @foreach($meursaultIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Hong Lu Id:</label>
-        <select name="HongLuId">
-            <option value=""></option>
-            @foreach($hongLuIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Heathcliff Id:</label>
-        <select name="HeathcliffId">
-            <option value=""></option>
-            @foreach($heathcliffIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Ishmael Id:</label>
-        <select name="IshmaelId">
-            <option value=""></option>
-            @foreach($ishmaelIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Rodion Id:</label>
-        <select name="RodionId">
-            <option value=""></option>
-            @foreach($rodionIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Sinclair Id:</label>
-        <select name="SinclairId">
-            <option value=""></option>
-            @foreach($sinclairIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Outis Id:</label>
-        <select name="OutisId">
-            <option value=""></option>
-            @foreach($outisIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
-
-    <div class="form-row">
-        <label>Gregor Id:</label>
-        <select name="GregorId">
-            <option value=""></option>
-            @foreach($gregorIdentities as $identity)
-                <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
-            @endforeach
-        </select>
-    </div>
+    @foreach($sinnerPickers as $picker)
+        <div class="form-row">
+            <label>{{ $picker['label'] }} Id:</label>
+            <select
+                name="{{ $picker['field'] }}"
+                id="{{ $picker['key'] }}-id-select"
+                class="id-picker-select"
+                autocomplete="off"
+                data-modal-id="{{ $picker['key'] }}-modal"
+            >
+                <option value=""></option>
+                @foreach($picker['identities'] as $identity)
+                    <option value="{{ $identity->id }}">{{ $identity->Identity }}</option>
+                @endforeach
+            </select>
+        </div>
+    @endforeach
     <h5>what the mirror dungeon needs... is kindness.</h5>
     <h3>Unused sinners:</h3>
 
@@ -237,6 +152,45 @@
 
     <input type="submit" value="Save">
 </form>
+
+@foreach($sinnerPickers as $picker)
+    <div
+        id="{{ $picker['key'] }}-modal"
+        class="id-modal"
+        aria-hidden="true"
+        style="display: none;"
+        data-select-id="{{ $picker['key'] }}-id-select"
+    >
+        <div class="id-modal-panel" role="dialog" aria-modal="true" aria-labelledby="{{ $picker['key'] }}-modal-title">
+            <div class="id-modal-header">
+                <h2 id="{{ $picker['key'] }}-modal-title">Select {{ $picker['label'] }} Identity</h2>
+                <div class="id-modal-actions">
+                    <button type="button" class="id-modal-clear">Clear selection</button>
+                    <button type="button" class="id-modal-close" aria-label="Close">x</button>
+                </div>
+            </div>
+            <div class="id-modal-grid">
+                @foreach($picker['identities'] as $identity)
+                    <button
+                        type="button"
+                        class="id-card"
+                        data-id="{{ $identity->id }}"
+                        title="{{ $identity->Identity }}"
+                        aria-label="{{ $identity->Identity }}"
+                    >
+                        <img
+                            src="{{ asset('images/' . $picker['folder'] . '/' . rawurlencode($identity->Identity . '.png')) }}"
+                            alt="{{ $identity->Identity }}"
+                            loading="lazy"
+                        >
+                    </button>
+                @endforeach
+            </div>
+        </div>
+    </div>
+@endforeach
+
+<script src="{{ asset('js/create-identity-picker.js') }}?v={{ filemtime(public_path('js/create-identity-picker.js')) }}" defer></script>
 
     @else
         <h1>Access Denied</h1>
