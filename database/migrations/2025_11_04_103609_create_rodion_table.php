@@ -32,6 +32,7 @@ return new class extends Migration
             ['Identity' => 'Heishou Pack - Si Branch'],
             ['Identity' => 'Lobotomy E.G.O The Sword Sharpened with Tears'],
             ['Identity' => 'R Corp. 4th Pack Reindeer'],
+            ['Identity' => 'The Ring Fauvist Docent'],
         ]);
     }
 

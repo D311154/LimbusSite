@@ -41,7 +41,7 @@
 
     <div class="form-row">
         <label>Adversity:</label>
-        <input type="number" name="adversity" min="0" max="50">
+        <input type="number" name="adversity" min="0" max="60">
     </div>
 
     <div class="form-row">
