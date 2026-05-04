@@ -32,6 +32,7 @@ return new class extends Migration
             ['Identity' => 'Kurokumo Clan Wakashu'],
             ['Identity' => 'W Corp. L4 Cleanup Agent - CCA'],
             ['Identity' => 'Heishou Pack - You Branch Adept'],
+            ['Identity' => 'The Middle Big Brother'],
         ]);
     }
 
