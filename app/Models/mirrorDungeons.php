@@ -35,6 +35,7 @@ class mirrorDungeons extends Model
         'OutisBenched',
         'GregorId',
         'GregorBenched',
+        'Arayashiki',
     ];
 
     public function yiSang()
@@ -95,5 +96,54 @@ class mirrorDungeons extends Model
     public function gregor()
     {
         return $this->belongsTo(Gregor::class, 'GregorId');
+    }
+
+    public function getImagePath($sinnerType)
+    {
+        $arayashikiIdentities = [
+            'yiSang' => 'The House of Spiders - The Index Nursefather',
+            'faust' => 'The House of Spiders - The Ring Apprentice',
+            'donQuixote' => 'The Index Proxy - Effloresced E.G.O Procuration',
+            'hongLu' => 'The House of Spiders - The Ring Nursefather',
+            'ishmael' => 'The House of Spiders - The Middle Apprentice',
+            'sinclair' => 'The House of Spiders - The Pinky Apprentice',
+        ];
+
+        $sinner = $this->{$sinnerType};
+        // only used if arayashiki is toggled aka she fucking kills everyone
+        if ($this->Arayashiki && isset($arayashikiIdentities[$sinnerType]) && $sinner->Identity === $arayashikiIdentities[$sinnerType]) {
+            $sinnerMap = [
+                'yiSang' => 'YiSang',
+                'donQuixote' => 'DonQuixote',
+                'faust' => 'Faust',
+                'hongLu' => 'HongLu',
+                'ishmael' => 'Ishmael',
+                'sinclair' => 'Sinclair',
+            ];
+
+            $folderName = $sinnerMap[$sinnerType] ?? ucfirst($sinnerType);
+            $fileName = str_replace(' ', '_', $folderName);
+
+            return 'images/Erased/' . $fileName . '.png';
+        }
+
+        // default path
+        $sinnerMap = [
+            'yiSang' => 'YiSang',
+            'faust' => 'Faust',
+            'donQuixote' => 'DonQuixote',
+            'ryoshu' => 'Ryoshu',
+            'meursault' => 'Meursault',
+            'hongLu' => 'HongLu',
+            'heathcliff' => 'Heathcliff',
+            'ishmael' => 'Ishmael',
+            'rodion' => 'Rodion',
+            'sinclair' => 'Sinclair',
+            'outis' => 'Outis',
+            'gregor' => 'Gregor',
+        ];
+
+        $folderName = $sinnerMap[$sinnerType] ?? ucfirst($sinnerType);
+        return 'images/' . $folderName . '/' . $sinner->Identity . '.png';
     }
 }

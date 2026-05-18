@@ -32,6 +32,7 @@ return new class extends Migration
             ['Identity' => 'N Corp. E.G.O Contempt, Awe'],
             ['Identity' => 'Drifting Blade of Hongyuan'],
             ['Identity' => 'Lobotomy E.G.O Faint Aroma & Solitude'],
+            ['Identity' => 'Blade of the House of Spiders'],
         ]);
     }
 

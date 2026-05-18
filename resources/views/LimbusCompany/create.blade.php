@@ -150,6 +150,13 @@
         <!-- I DONT LIKE HOW I DID THIS BUT IM TOO LAZY TO MAKE IT BETTER BECAUSE IT *WORKS* FUCKKKKKK -->
     </div>
 
+    <div id="ryoshu-special-checkbox" style="display: none;">
+        <div class="ryoshu-checkbox-wrapper">
+            <input type="checkbox" name="Arayashiki" value="1">
+            <label>Erase them all.</label>
+        </div>
+    </div>
+
     <input type="submit" value="Save">
 </form>
 
@@ -159,8 +166,7 @@
         class="id-modal"
         aria-hidden="true"
         style="display: none;"
-        data-select-id="{{ $picker['key'] }}-id-select"
-    >
+        data-select-id="{{ $picker['key'] }}-id-select">
         <div class="id-modal-panel" role="dialog" aria-modal="true" aria-labelledby="{{ $picker['key'] }}-modal-title">
             <div class="id-modal-header">
                 <h2 id="{{ $picker['key'] }}-modal-title">Select {{ $picker['label'] }} Identity</h2>
@@ -176,13 +182,11 @@
                         class="id-card"
                         data-id="{{ $identity->id }}"
                         title="{{ $identity->Identity }}"
-                        aria-label="{{ $identity->Identity }}"
-                    >
+                        aria-label="{{ $identity->Identity }}">
                         <img
                             src="{{ asset('images/' . $picker['folder'] . '/' . rawurlencode($identity->Identity . '.png')) }}"
                             alt="{{ $identity->Identity }}"
-                            loading="lazy"
-                        >
+                            loading="lazy">
                     </button>
                 @endforeach
             </div>
@@ -191,6 +195,28 @@
 @endforeach
 
 <script src="{{ asset('js/create-identity-picker.js') }}?v={{ filemtime(public_path('js/create-identity-picker.js')) }}" defer></script>
+
+<script>
+    const ryoshuSelect = document.getElementById('ryoshu-id-select');
+    const ryoshuSpecialCheckbox = document.getElementById('ryoshu-special-checkbox');
+    const ryoshuSpecialIdentityName = 'Blade of the House of Spiders';
+
+    function updateRyoshuCheckboxVisibility() {
+        const selectedOption = ryoshuSelect.options[ryoshuSelect.selectedIndex];
+        const isSpecialIdentitySelected = selectedOption && selectedOption.text === ryoshuSpecialIdentityName;
+
+        if (isSpecialIdentitySelected) {
+            ryoshuSpecialCheckbox.style.display = 'block';
+        } else {
+            ryoshuSpecialCheckbox.style.display = 'none';
+            const checkbox = ryoshuSpecialCheckbox.querySelector('input[type="checkbox"]');
+            checkbox.checked = false;
+        }
+    }
+
+    ryoshuSelect.addEventListener('change', updateRyoshuCheckboxVisibility);
+    updateRyoshuCheckboxVisibility();
+</script>
 
     @else
         <h1>Access Denied</h1>

@@ -250,6 +250,7 @@ class mirrorDungeonsController extends Controller
             'SinclairId' => 'required',
             'OutisId' => 'required',
             'GregorId' => 'required',
+            'Arayashiki' => 'nullable|boolean',
         ]);
 
         mirrorDungeons::create($request->all());
