@@ -107,6 +107,7 @@ class mirrorDungeons extends Model
             'hongLu' => 'The House of Spiders - The Ring Nursefather',
             'ishmael' => 'The House of Spiders - The Middle Apprentice',
             'sinclair' => 'The House of Spiders - The Pinky Apprentice',
+            'outis' => 'The House of Spiders - The Middle Nursefather',
         ];
 
         $sinner = $this->{$sinnerType};
@@ -119,6 +120,7 @@ class mirrorDungeons extends Model
                 'hongLu' => 'HongLu',
                 'ishmael' => 'Ishmael',
                 'sinclair' => 'Sinclair',
+                'outis' => 'Outis',
             ];
 
             $folderName = $sinnerMap[$sinnerType] ?? ucfirst($sinnerType);
